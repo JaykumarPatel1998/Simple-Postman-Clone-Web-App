@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+
+    <!-- here goes navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Postman Clone</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">original postman</a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+
+        <!-- here goes title -->
+        <div class="container my-5">
+            <h4>Welcome to Postmaster</h4>
+            <hr>
+        </div>
+
+
+        <!-- here goes url and checkbox field -->
+        <div class="container my-5">
+
+
+
+            <label for="url" class="form-label">URL</label>
+            <input type="text" id="url" class="form-control" placeholder="URL goes here">
+
+
+            <h4 class="my-3">select your request type</h4>
+            <div class="form-check my-3">
+                <input class="form-check-input" type="radio" name="requestType" id="get" value="GET" checked>
+                <label class="form-check-label" for="get">
+                    GET
+                </label>
+            </div>
+            <div class="form-check my-1">
+                <input class="form-check-input" type="radio" name="requestType" id="post" value="POST">
+                <label class="form-check-label" for="post">
+                    POST
+                </label>
+            </div>
+
+
+
+        </div>
+
+
+        <!-- Content box -->
+        <div class="container my-5">
+
+            <h4 class="my-3">select your content type</h4>
+            <div class="form-check my-3">
+                <input class="form-check-input" type="radio" name="content" id="json" value="json" checked>
+                <label class="form-check-label" for="json">
+                    JSON
+                </label>
+            </div>
+
+            <div class="form-check my-1">
+                <input class="form-check-input" type="radio" name="content" id="custom" value="param">
+                <label class="form-check-label" for="custom">
+                    CUSTOM PARAMS
+                </label>
+            </div>
+
+
+
+        </div>
+
+        <!-- custom parameter box - This will hide on checking json object-->
+        <div class="container my-5 " id="parameterBox">
+
+            <form class="row g-3">
+                <label for="url" class="form-label">Add your parameters</label>
+                <div class="col-md-4">
+
+                    <input type="text" class="form-control" id="parameterKey1" placeholder="Enter Key">
+                </div>
+                <div class="col-md-4">
+
+                    <input type="text" class="form-control" id="parameterValue1" placeholder="Enter Value">
+                </div>
+
+                <button id="addParam" class=" col-md-1 btn btn-secondary">+</button>
+            </form>
+            <div  id="params">
+
+            </div>
+        </div>
+
+       
+
+
+        <!-- json request Box -->
+        <div class="container">
+            <div id="requestJsonBox" class="form-floating">
+                <textarea class="form-control" placeholder="Place json here" id="requestJsonText" rows="4" cols="100"></textarea>
+                <label for="floatingTextarea">json</label>
+            </div>
+        </div>
+
+
+
+        <!-- submit button will trigger  fetch api -->
+        <div class="container">
+            <button id="submit" class="btn btn-primary my-3">
+                submit
+            </button>
+        </div>
+
+
+
+
+        <!-- response box Textarea -->
+        <div class="container">
+            <div class="input-group my-3 mb-10" id="responseBox">
+                <span class="input-group-text">Response</span>
+                <textarea class="form-control" id="responseText" rows="4" cols="50">
+
+            Response will appear here
+        </textarea>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+
+    <script src="index.js"></script>
+
+
+
+
+</body>
+
+</html>
